@@ -1,17 +1,11 @@
 #!/usr/bin/python3
-# 102-magic_calculation.py
-
-
-
-def magic_calculation(a, b):
-    result = 0
-    for i in range(1, 3):
+def safe_print_list_integers(my_list=[], x=0):
+    r_num = 0
+    for i in range(r_num, x):
         try:
-            if i > a:
-                raise Exception('Too far')
-            else:
-                result += a ** b / i
-        except:
-            result = b + a
-            break
-    return (result)
+            print("{:d}".format(my_list[i]), end='')
+            r_num += 1
+        except (ValueError, TypeError):
+            pass
+    print()
+    return r_num
